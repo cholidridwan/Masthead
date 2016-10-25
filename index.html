@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title></title>
+	<!--script src="//s0.2mdn.net/ads/studio/Enabler.js"></script-->
+	<script src="js/Enabler.js"></script>
 	<style type="text/css">
 		html, body {
-		  width: 100%; 
-		  height: 100%;
-		  margin: 0px;
-		  padding: 0px;
+			/*actual size is 970x250*/
+		  	width: 100%; 
+		  	height: 100%;
+		  	margin: 0px;
+		  	padding: 0px;
 		}
 
 		#page-1{
@@ -28,9 +31,20 @@
 			left: 890px;
 			top: 210px;
 		}
+
+		#bg-exit {
+			/*actual size is 970x250*/
+			position: absolute;
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			z-index: 99;
+		}
 	</style>
 </head>
 <body>
+	<!-- btn exit can placed in any-->
+	<div id="bg-exit"></div>
 	<div id="page-1">
 		<img id="page1" src="assets/bg.jpg">
 	</div>
@@ -48,6 +62,12 @@
 		}
 
 		setTimeout(showEndPage, 4000);
+
+		function bgExitHandler(e) {
+			Enabler.exit('Background Exit');		  
+		}
+
+		document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
 	</script>
 </body>
 </html>
