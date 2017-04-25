@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<script data-source="gwd_webcomponents_min.js" data-version="5" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
 	<script type="text/javascript" gwd-events="support" src="js/gwd-events-support.1.0.js"></script>
 	<script data-source="js/googbase_min.js" data-version="3" data-exports-type="googbase" src="js/googbase_min.js"></script>
 	<script data-source="js/gwdyoutube_min.js" data-version="13" data-exports-type="gwd-youtube" src="js/gwdyoutube_min.js"></script>
@@ -67,9 +68,21 @@
 			z-index: 98;
 		}
 
+		.ytclose{
+			position: absolute;
+			width: 970px;
+			height: 250px;
+			
+		}
+
 		#ytClose_dc {
 			position: absolute;
-			z-index: 99;
+			z-index: 99;			
+			display: block;
+			height: 25px;
+			right: 5px;		
+			top: 5px;
+			width: 25px;
 		}
 	</style>
 </head>
@@ -90,7 +103,9 @@
 		<gwd-metric-event source="gwd-youtube_id" event="previewed100percent" metric="gwd-youtube_id: YouTube preview complete"></gwd-metric-event>
 	</gwd-metric-configuration>
 
-	<ci-ytclosebutton lang="en" theme="white" shadow="false" id="ytClose_dc"></ci-ytclosebutton>
+	<div class="ytclose">
+		<ci-ytclosebutton lang="en" theme="white" shadow="false" id="ytClose_dc" shadow="" style="top: 5px; right: 5px;"></ci-ytclosebutton>
+	</div>
 	<!-- btn exit can placed in any-->
 	<div id="bg-exit"></div>
 	<div id="page-1">
